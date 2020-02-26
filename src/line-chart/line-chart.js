@@ -280,16 +280,16 @@ class LineChart extends AbstractChart {
       horizontalLabelRotation = 0,
       formatYLabel = yLabel => yLabel,
       formatXLabel = xLabel => xLabel,
-      segments
+      segments,
     } = this.props;
     const { labels = [] } = data;
     const {
-      borderRadius = 0,
-      paddingTop = 16,
-      paddingRight = 64,
-      margin = 0,
-      marginRight = 0,
-      paddingBottom = 0
+      borderRadius = this.props.chartConfig && this.props.chartConfig.borderRadius || 0,
+      paddingTop = this.props.chartConfig && this.props.chartConfig.paddingTop ||16,
+      paddingRight = this.props.chartConfig && this.props.chartConfig.paddingRight || 64,
+      margin = this.props.chartConfig && this.props.chartConfig.margin ||0,
+      marginRight = this.props.chartConfig && this.props.chartConfig.marginRight ||0,
+      paddingBottom = this.props.chartConfig && this.props.chartConfig.paddingBottom ||0
     } = style;
 
     const config = {

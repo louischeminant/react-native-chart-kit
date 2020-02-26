@@ -73,14 +73,15 @@ class BarChart extends AbstractChart {
       horizontalLabelRotation = 0,
       withInnerLines = true,
       showBarTops = true,
-      segments = 4
+      segments = 4,
     } = this.props;
-    const { borderRadius = 0, paddingTop = 16, paddingRight = 64 } = style;
     const config = {
       width,
       height,
       verticalLabelRotation,
       horizontalLabelRotation,
+      paddingTop: (this.props.chartConfig && this.props.chartConfig.paddingTop) || 16,
+      paddingRight: (this.props.chartConfig && this.props.chartConfig.paddingRight) || 64,
       barRadius: (this.props.chartConfig && this.props.chartConfig.barRadius) || 0,
       formatYLabel: (this.props.chartConfig && this.props.chartConfig.formatYLabel) || function(label){return label},
       formatXLabel: (this.props.chartConfig && this.props.chartConfig.formatXLabel) || function(label){return label},
